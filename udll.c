@@ -4,11 +4,12 @@ union Data {
 
 struct Node {
         //type for address?
-        //where instantiate
+        //where instantiate? as a global var in here?
 };
 
 void insert(int index, union Data data){
         //include length incrementer
+        //create list if none
 }
 
 void remove(int index){
