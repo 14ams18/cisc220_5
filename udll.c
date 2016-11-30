@@ -12,30 +12,34 @@ typedef struct{
 } Node;
 
 void insert(int index, union Data data){
-        if(*head.data == NULL){ //no linked list, creates node/reassigns 'head'
+        if(*head.data == NULL){ //no linked list, creates node/reassigns 'head' and 'last'
                 Node newNode = {1, NULL, data, NULL};
                 *head = &newNode;
+                *last = &newNode;
         }
-        else if( ) { //inserting new Node before current head
-                
+        else if(index == 0) { //inserting new Node before current head
+                Node *ptr = head;
+                Node newNode = {*head.length, NULL, data, *ptr};
+                //left off here
         }
-        else if( (index-1) <= head.length) { //inserting in middle of list
+        else if( index <= head.length) { //inserting in middle of list
                 Node *ptr = head;
                 for(int i=0; i< (index-1); i++) {
                         ptr=ptr->next;
                 }
                 Node *after = ptr->next->next;
                 Node newNode = {NULL, ptr, data, after};
-                ptr.next = newNode;
-                after.previous = newNode;
+                *ptr.next = newNode;
+                *after.previous = newNode;
                 if(index == head.length) {
-                                
+                        
                 }
-                head.length++;
+                
         }
         else { //no valid index provided
                 printf("Invalid index value");
         }
+        head.length++;
                 
         //include length incrementer
         //create list if none
