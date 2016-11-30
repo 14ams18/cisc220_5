@@ -2,19 +2,26 @@ union Data {
         // look at notes
 };
 
-struct Node {
+typedef struct{
+        int length;
+        *Node previous;
+        Data data;
+        *Node next;
         //type for address?
         //where instantiate? as a global var in here?
-};
+} Node;
 
 void insert(int index, union Data data){
+        if(*head.data == NULL){
+                Node newNode = {NULL, data, NULL}; // also length
+                *head = newNode
         if( (index-1) <= head.length) {
-                Data *ptr = head;
+                Node *ptr = head;
                 for(int i=0; i< (index-1); i++) {
                         ptr=ptr->next;
                 }
-                Data *after = ptr->next->next;
-                Data newNode = {ptr, data, after}; //also a NULL for length
+                Node *after = ptr->next->next;
+                Node newNode = {ptr, data, after}; //also a NULL for length
                 ptr.next = newNode;
                 after.previous = newNode;
                 head.length++;
