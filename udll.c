@@ -8,6 +8,17 @@ struct Node {
 };
 
 void insert(int index, union Data data){
+        if( (index-1) <= head.length) {
+                Data *ptr = head;
+                for(int i=0; i< (index-1); i++) {
+                        ptr=ptr->next;
+                }
+                
+        }
+        else {
+                
+        }
+                
         //include length incrementer
         //create list if none
 }
