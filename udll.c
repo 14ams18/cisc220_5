@@ -18,9 +18,10 @@ void insert(int index, union Data data){
                 *last = &newNode;
         }
         else if(index == 0) { //inserting new Node before current head
-                Node *ptr = head;
+                Node *ptr = *head;
                 Node newNode = {*head.length, NULL, data, *ptr};
-                //left off here
+                ptr.previous = &newNode;
+                head = &newNode;
         }
         else if( index <= head.length) { //inserting in middle of list
                 Node *ptr = head;
