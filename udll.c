@@ -88,13 +88,16 @@ union Data get(int index){
         }
         else { //no valid index provided
                 printf("Invalid index value");
-                return 0;
+                return NULL;
         }
         //minimum num of iterations
         //if to start at head or tail: if index < length-1-index
 }
 
 int length(){
-        
+        if(*head.length == NULL) {
+                return 0;
+        }
+        return head.length;
         // global var declared in here?
 }
