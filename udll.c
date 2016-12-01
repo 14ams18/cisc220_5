@@ -75,14 +75,20 @@ void remove(int index){
 
 union Data get(int index){
         if (index <= length/2) {
-                
+                for(int i=0; i< index; i++) {
+                        ptr=ptr->next;
+                }
+                return ptr.data;
         }
         else if (index > length/2) {
-                
+                for(int i=0; i< index; i++) {
+                        ptr=ptr->previous;
+                }
+                return ptr.data;
         }
         else { //no valid index provided
                 printf("Invalid index value");
-                
+                return 0;
         }
         //minimum num of iterations
         //if to start at head or tail: if index < length-1-index
