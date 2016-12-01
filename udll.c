@@ -58,8 +58,10 @@ void remove(int index){
         else if(index <= head.length) {
                 Node *ptr = head;
                 for(int i=0; i< (index-1); i++) {
-                        
+                        ptr=ptr->next;
                 }
+                ptr.next = ptr->next->next;
+                
         }
         head.length--;
         //decrement length
