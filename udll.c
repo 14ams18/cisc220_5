@@ -17,14 +17,16 @@ void insert(int index, union Data data){
                 *head = &newNode;
                 *last = &newNode;
         }
-        else if(index == 0) { //inserting new Node before current head
+        else if(index == 0) { //inserting at front of the list
                 Node *ptr = *head;
                 Node newNode = {*head.length, NULL, data, *ptr};
                 ptr.previous = &newNode;
                 head = &newNode;
         }
-        else if(index == head.length) {
-                
+        else if(index == head.length) { //inserting at end of the list
+                Node newNode = {NULL, *last, data, NULL}
+                last.next = &newNode;
+                last = &newNode;
         }
         else if(index <= head.length) { //inserting in middle of list
                 Node *ptr = head;
@@ -35,10 +37,6 @@ void insert(int index, union Data data){
                 Node newNode = {NULL, ptr, data, after};
                 *ptr.next = newNode;
                 *after.previous = newNode;
-                if(index == head.length) {
-                        
-                }
-                
         }
         else { //no valid index provided
                 printf("Invalid index value");
@@ -50,6 +48,20 @@ void insert(int index, union Data data){
 }
 
 void remove(int index){
+        if(index == 0) { //removing head of list
+                *head = *head.next;
+                *head.
+        }
+        else if(index == head.length) { //removing 
+                
+        }
+        else if(index <= head.length) {
+                Node *ptr = head;
+                for(int i=0; i< (index-1); i++) {
+                        
+                }
+        }
+        head.length--;
         //decrement length
 }
 
