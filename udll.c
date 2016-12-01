@@ -57,7 +57,7 @@ void remove(int index){
                 *last = *last.previous;
                 last.next = NULL;
         }
-        else if(index <= head.length) {
+        else if(index <= head.length) { //removing a Node in the middle
                 Node *ptr = head;
                 for(int i=0; i< (index-1); i++) {
                         ptr=ptr->next;
@@ -66,15 +66,29 @@ void remove(int index){
                 ptr.next = *after;
                 after.previous = *ptr;
         }
+        else { //no valid index provided
+                printf("Invalid index value");
+        }
         head.length--;
         //decrement length
 }
 
 union Data get(int index){
+        if (index <= length/2) {
+                
+        }
+        else if (index > length/2) {
+                
+        }
+        else { //no valid index provided
+                printf("Invalid index value");
+                
+        }
         //minimum num of iterations
         //if to start at head or tail: if index < length-1-index
 }
 
 int length(){
+        
         // global var declared in here?
 }
