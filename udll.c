@@ -23,7 +23,10 @@ void insert(int index, union Data data){
                 ptr.previous = &newNode;
                 head = &newNode;
         }
-        else if( index <= head.length) { //inserting in middle of list
+        else if(index == head.length) {
+                
+        }
+        else if(index <= head.length) { //inserting in middle of list
                 Node *ptr = head;
                 for(int i=0; i< (index-1); i++) {
                         ptr=ptr->next;
