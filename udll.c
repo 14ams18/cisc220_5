@@ -49,19 +49,22 @@ void insert(int index, union Data data){
 
 void remove(int index){
         if(index == 0) { //removing head of list
+                head.next.length = head.length;
                 *head = *head.next;
-                *head.
+                *head.previous = NULL;
         }
-        else if(index == head.length) { //removing 
-                
+        else if(index == head.length) { //removing the last Node
+                *last = *last.previous;
+                last.next = NULL;
         }
         else if(index <= head.length) {
                 Node *ptr = head;
                 for(int i=0; i< (index-1); i++) {
                         ptr=ptr->next;
                 }
-                ptr.next = ptr->next->next;
-                
+                Node *after = *ptr->next->next;
+                ptr.next = *after;
+                after.previous = *ptr;
         }
         head.length--;
         //decrement length
